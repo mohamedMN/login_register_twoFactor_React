@@ -7,14 +7,22 @@ export default function Signup() {
   const [username, setUsername] = useState("");
   const [tel, setTel] = useState("");
   const navigate = useNavigate();
+  const postSignUpDetails = () => {
+    const data = fetch("http://localhost:3500/");
+  };
+  // to prevent submit of form
   const handleSubmit = (e) => {
     e.preventDefault();
+    //👇🏻 Call it within the submit function
+    postSignUpDetails();
     console.log({ email, username, tel, password });
   };
+  // to redirect user to login page
   const gotoLoginPage = () => {
     navigate("/");
   };
   return (
+    // component form of sign in
     <div className="signup__container">
       <h2>Sign up </h2>
       <form className="signup__form" onSubmit={handleSubmit}>
